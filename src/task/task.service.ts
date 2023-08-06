@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Task, TaskStatus } from './task.model';
+import { CreateTaskDto } from './dto/create-task-dto';
 
 @Injectable()
 export class TaskService {
@@ -9,7 +10,8 @@ export class TaskService {
         return this.tasks;
     }
 
-    createTask(title: String, description: String): Task {
+    createTask(CreateTaskDto: CreateTaskDto): Task {
+        const { title, description} = CreateTaskDto;
         let val =1;
         if(this.tasks.length > 0) {
             val++;
