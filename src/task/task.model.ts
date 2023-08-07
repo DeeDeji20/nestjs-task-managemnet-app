@@ -2,7 +2,7 @@ export interface Task{
     id:String;
     title: String;
     description: String;
-    satus: TaskStatus;
+    status: TaskStatus;
 }
 
 
